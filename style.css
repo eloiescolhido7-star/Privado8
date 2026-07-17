@@ -1,34 +1,293 @@
-/* Reset e estilos globais */
+/* Variáveis de Cores - Tema Escuro */
+:root {
+    --primary-color: #red;
+    --secondary-color: #red;
+    --text-color: #red;
+    --light-bg: #1a1a1a;
+    --white: #0d0d0d;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --card-bg: #2a2a2a;
+    --navbar-bg: #111111;
+}
+
+/* Reset e Estilos Globais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: #0d0d0d;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navegação */
+.navbar {
+    background: var(--navbar-bg);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: var(--text-color);
+    padding: 120px 20px;
+    text-align: center;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
-/* Container principal */
-.container {
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: var(--card-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Seção Sobre */
+.about {
+    padding: 80px 20px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+
+.about .container {
     text-align: center;
-    background: white;
-    padding: 60px 40px;
-    border-radius: 15px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    max-width: 600px;
-    width: 100%;
-    animation: slideIn 0.6s ease-in-out;
 }
 
-/* Animação de entrada */
-@keyframes slideIn {
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #999;
+}
+
+/* Projetos */
+.projects {
+    padding: 80px 20px;
+    background: #0d0d0d;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.project-image {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    color: #999;
+    margin-bottom: 1.5rem;
+}
+
+/* Skills */
+.skills {
+    padding: 80px 20px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.skill-bar {
+    background: #333;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+/* Contato */
+.contact {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: var(--text-color);
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+    background: #000000;
+    color: var(--text-color);
+    text-align: center;
+    padding: 2rem 20px;
+    border-top: 1px solid #333;
+}
+
+/* Animações */
+@keyframes fadeInDown {
     from {
         opacity: 0;
         transform: translateY(-30px);
@@ -39,60 +298,195 @@ body {
     }
 }
 
-/* Título */
-h1 {
-    color: #333;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Parágrafos */
-p {
-    color: #666;
-    font-size: 1.1em;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-p:last-child {
-    margin-bottom: 0;
-}
-
-/* Botão */
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 1em;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsivo */
-@media (max-width: 600px) {
-    .container {
-        padding: 40px 25px;
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
     }
 
-    h1 {
-        font-size: 2em;
+    .hero-content h1 {
+        font-size: 2rem;
     }
 
-    p {
-        font-size: 1em;
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .about h2,
+    .projects h2,
+    .skills h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .contact-links .btn {
+        width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        min-height: 50vh;
+    }
+
+    .about h2,
+    .projects h2,
+    .skills h2,
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+}index.html
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Seu Nome</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Seu Nome</h1>
+      <nav class="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <img src="images/foto.jpg" alt="Sua foto" class="avatar" />
+        <div>
+          <h2>Olá! Eu sou Seu Nome</h2>
+          <p>Desenvolvedor(a) | Estudante de Java | Criador(a) de projetos simples e úteis.</p>
+          <a class="btn" href="#projetos">Ver projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="container card">
+      <h2>Sobre mim</h2>
+      <p>Breve descrição sobre você: habilidades, interesses e o que procura. Ex.: "Gosto de programar em Java, construir sites e aprender novas tecnologias."</p>
+    </section>
+
+    <section id="projetos" class="container">
+      <h2>Projetos</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Projeto 1</h3>
+          <p>Descrição curta do projeto. Tecnologias usadas.</p>
+          <a href="#" class="link">Ver mais</a>
+        </article>
+        <article class="card">
+          <h3>Projeto 2</h3>
+          <p>Descrição curta do projeto. Tecnologias usadas.</p>
+          <a href="#" class="link">Ver mais</a>
+        </article>
+        <article class="card">
+          <h3>Projeto 3</h3>
+          <p>Descrição curta do projeto. Tecnologias usadas.</p>
+          <a href="#" class="link">Ver mais</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="container card">
+      <h2>Contato</h2>
+      <p>Email: <a href="mailto:seu-email@example.com">seu-email@example.com</a></p>
+      <p>LinkedIn / GitHub: <a href="#" class="link">seu-perfil</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="ano"></span> — Seu Nome</p>
+    </div>
+  </footer>
+
+  <script>
+    // Atualiza o ano do rodapé automaticamente
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
+
+styles.css
+```css
+:root{
+  --bg:#f4f6fb;
+  --primary:#2463eb;
+  --text:#1f2937;
+  --muted:#556270;
+  --radius:10px;
+  --gap:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter, Arial, sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+.site-header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.25rem;color:var(--primary)}
+.nav a{margin-left:12px;color:var(--text);text-decoration:none;padding:8px;border-radius:6px}
+.nav a:hover{background:rgba(36,99,235,0.08)}
+
+.hero{background:linear-gradient(180deg, rgba(36,99,235,0.06), rgba(36,99,235,0.02));padding:40px 0}
+.hero-inner{display:flex;gap:20px;align-items:center}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.hero-inner h2{margin-bottom:6px;color:var(--primary)}
+
+.btn{display:inline-block;background:var(--primary);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;margin-top:8px}
+.btn:hover{opacity:0.95}
+
+.card{background:#fff;padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.06);margin:18px 0}
+h2{margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap);margin-top:12px}
+.card h3{margin-bottom:8px}
+.link{color:var(--primary);text-decoration:none}
+.link:hover{text-decoration:underline}
+
+.site-footer{padding:18px;text-align:center;color:var(--muted);margin-top:20px;font-size:0.95rem}
+
+/* Responsivo */
+@media (max-width:700px){
+  .hero-inner{flex-direction:column;align-items:center;text-align:center}
+  .nav{display:none} /* menu simples; posso adicionar um menu hambúrguer se quiser */
+  .container{padding:14px}
+}
+```
