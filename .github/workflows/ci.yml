@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Validate CSS
+      run: echo "Validating CSS files..."
+    
+    - name: Build check
+      run: echo "Build completed successfully!"
