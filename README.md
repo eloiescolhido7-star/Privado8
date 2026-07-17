@@ -1,2 +1,3 @@
-<!doctype html>
-<h1>prive 8
+<!doctype>
+<ready>
+<h1>prive 8</h1>
