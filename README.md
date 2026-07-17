@@ -1,3 +1,3 @@
 <!DOCTYPE html>
-<ready>
+<heady>
 <h1>prive 8</h1>
