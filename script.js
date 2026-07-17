@@ -1,1 +1,3 @@
-j
+// Animações suaves ao scroll
+const 
+```
